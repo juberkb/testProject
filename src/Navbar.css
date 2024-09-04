@@ -1,0 +1,226 @@
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .logo {
+    flex: 1;
+    text-align: start;
+  }
+  
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .nav-links {
+    display: flex;
+    align-items: center;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+  
+  .nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #007bff;
+  }
+  
+  
+  
+  .menu-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .menu-button span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #007bff;
+    border-radius: 3px;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-button span:nth-child(1) {
+    top: 7px;
+  }
+  
+  .menu-button span:nth-child(2) {
+    top: 13px;
+  }
+  
+  .menu-button span:nth-child(3) {
+    top: 19px;
+  }
+  
+  .menu-button.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 13px;
+  }
+  
+  .menu-button.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-button.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 13px;
+  }
+  
+  @media (min-width: 992px) {
+    .navbar-container {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .search-container {
+      order: 2;
+    }
+  
+    .search-icon {
+      display: block;
+    }
+  
+    .search-input {
+      display: block;
+      width: 150px;
+    }
+  
+    .nav-links {
+      display: flex;
+    }
+  }
+  @media (max-width: 767px) {
+    .navbar-container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .search-container {
+      margin-top: .5rem;
+      flex: 1;
+      order: 3;
+      position: relative;
+      margin-right: -3rem;
+    }
+  
+    .search-input {
+      display: none;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .search-input.show {
+      display: block;
+      width: 100%;
+      opacity: 1;
+    }
+  
+    .menu-button {
+      display: block;
+      justify-content: flex-start;
+      align-items: flex-start;
+      text-align: start;
+      order: 1;
+      margin-left: -24rem;
+    }
+  
+    .logo {
+      margin-top: .2rem;
+      /* flex: 0 0 auto; */
+      margin-left: -2rem;
+      /* order: 0; */
+    }
+  
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  
+    .nav-links.show {
+      margin-top: 3.3rem;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  
+    .nav-links.hide {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  
+    .nav-links a {
+      color: #333;
+      margin: 20px 0;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+  .search-results {
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .search-result-item {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    transition: background 0.3s;
+  }
+  
+  .search-result-item:hover {
+    background: #f1f1f1;
+  }
+  
+  .no-results {
+    padding: 10px;
+    color: #777;
+  }
